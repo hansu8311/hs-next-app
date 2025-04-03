@@ -1,20 +1,15 @@
 {
-  "extends": ["next/core-web-vitals", "airbnb", "airbnb-typescript"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  },
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
   "rules": {
-    "react/jsx-props-no-spreading": "off",
-    "linebreak-style": 0,
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true,
-        "optionalDependencies": true,
-        "peerDependencies": false
-      }
-    ],
-    "import/prefer-default-export": ["off", { "target": "single" }],
-    "operator-linebreak": [0]
+    "prettier/prettier": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".ts", ".tsx"] }]
   }
 }
