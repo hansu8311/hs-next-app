@@ -12,7 +12,36 @@ import tailwindcss from 'eslint-plugin-tailwindcss';
 
 export default [
   {
-    ignores: ['dist'], // 무시할 디렉토리
+    // 무시할 파일 및 디렉토리
+    ignores: [
+      // 빌드 결과물
+      'dist/',
+      'build/',
+
+      // Node.js 모듈
+      'node_modules/',
+
+      // 환경 설정 파일
+      '.eslintrc.cjs',
+
+      // 로그 파일
+      'npm-debug.log',
+      'yarn-debug.log',
+      'yarn-error.log',
+
+      // 프로젝트 루트에서 제외된 다른 파일들
+      'public/',
+      'coverage/',
+
+      // 기타
+      '.vscode/',
+      '.idea/',
+      '.DS_Store',
+      '*.config.js',
+
+      // 패키지 관리
+      'package-lock.json',
+    ],
     files: ['**/*.{ts,tsx}'], // TypeScript 및 TSX 파일 대상
     languageOptions: {
       parser: tsParser, // TypeScript 파서 설정
