@@ -37,4 +37,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# lint-staged
+.eslintcache
+
 # End of https://www.toptal.com/developers/gitignore/api/nextjs
