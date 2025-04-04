@@ -1,3 +1,5 @@
+import { defineConfig } from "eslint/config";
+
 import js from '@eslint/js';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
@@ -10,36 +12,21 @@ import jsxA11y from 'eslint-plugin-jsx-a11y';
 import importPlugin from 'eslint-plugin-import';
 import tailwindcss from 'eslint-plugin-tailwindcss';
 
-export default [
+export default defineConfig([
   {
     // 무시할 파일 및 디렉토리
     ignores: [
-      // 빌드 결과물
-      'dist/',
-      'build/',
-
-      // Node.js 모듈
-      'node_modules/',
-
-      // 환경 설정 파일
+      'dist/**',
+      'build/**',
+      'node_modules/**',
       '.eslintrc.cjs',
-
-      // 로그 파일
       'npm-debug.log',
-      'yarn-debug.log',
-      'yarn-error.log',
-
-      // 프로젝트 루트에서 제외된 다른 파일들
-      'public/',
-      'coverage/',
-
-      // 기타
-      '.vscode/',
-      '.idea/',
+      'public/**',
+      'coverage/**',
+      '.vscode/**',
+      '.idea/**',
       '.DS_Store',
       '*.config.js',
-
-      // 패키지 관리
       'package-lock.json',
     ],
     files: ['**/*.{ts,tsx}'], // TypeScript 및 TSX 파일 대상
@@ -114,4 +101,4 @@ export default [
       'no-unused-vars': 'off', // 기본 no-unused-vars 비활성화 (TS 규칙 사용)
     },
   },
-];
+]);
